@@ -1,18 +1,17 @@
 function continous_subArr(arr,target){
-     //initialize the start pointer and current 
+     //initialize the start pointer and current sum
     let index_start =0;
      let current_sum =0;
     // This loop iterates through the array with the end pointer, representing the end of the current subarray.
      for(let i=0; i<arr.length; i++){
          current_sum+= arr[i]
-        // If currentSum exceeds the target, reduce the sum by moving the start pointer to the right.
+        // If current sum exceeds the target, reduce the sum by moving the start pointer to the right.
          while (current_sum>target && index_start<=i){
          current_sum -=arr[index_start];
          index_start++;
          }
      if (current_sum ==target){
          
-     //   return arr.slice(start, i + 1)
      return true
      }
      }

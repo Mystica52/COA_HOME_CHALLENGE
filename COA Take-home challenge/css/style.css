@@ -1,0 +1,161 @@
+/* desktop views */
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    margin: 1px;
+
+}
+
+.card:hover {
+    border-color: #FFFFFF;
+}
+
+.card .card-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px;
+
+
+}
+
+.card:hover .card-body {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.9s ease, opacity 0.9s ease;
+    margin-bottom: 40px;
+    -webkit-transition: transform 0.9s ease, opacity 0.9s ease;
+    -moz-transition: transform 0.9s ease, opacity 0.9s ease;
+    -ms-transition: transform 0.9s ease, opacity 0.9s ease;
+    -o-transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+
+
+.animal-name {
+
+    font-family: 'D-DIN Exp', "Alatsi";
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 38px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    width: 25%;
+
+}
+
+.location {
+    color: #FFFFFF;
+    font-family: Poppins;
+    size: 12px;
+    font-weight: 100;
+    opacity: 0.7;
+    margin-top: 8px;
+    margin-bottom: 0;
+
+}
+
+.card img {
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+
+
+.card:hover img {
+    filter: blur(5px) brightness(0.5) grayscale(100%);
+    color: black;
+
+}
+
+.card:hover .card-body {
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+
+
+.card .card-body .card-know-more {
+    display: flex;
+    flex-direction: row;
+    color: #00dbff;
+    font-weight: 400;
+    opacity: 0;
+    margin-top: 8px;
+    font-family: "Poppins";
+}
+
+
+.card .card-know-more img {
+    width: 15px;
+    height: 24px;
+    filter: invert(60%) sepia(100%) saturate(500%) hue-rotate(160deg) brightness(95%) contrast(90%);
+    transition: filter 0.3s ease;
+}
+
+.card .card-know-more a {
+    padding-right: 5px;
+    color: #00dbff;
+    text-decoration: none;
+}
+
+.card:hover .card-know-more-arrow {
+    filter: invert(100%) brightness(100%);
+
+}
+
+
+.card:hover .card-know-more {
+    display: flex;
+    opacity: 1;
+    color: #00dbff;
+
+}
+
+
+/* mobile views */
+@media (max-width: 599px) {
+    .cards-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 100vh;
+    }
+
+    .card {
+        width: 25%;
+        margin: 1;
+
+
+    }
+
+    .card img {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .card .card-body {
+        display: none;
+    }
+
+    .card:hover img {
+        filter: blur(5px) brightness(0.5) grayscale(80%);
+        color: black;
+    }
+
+}
